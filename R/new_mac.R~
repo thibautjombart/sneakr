@@ -1,0 +1,14 @@
+#' Sets random mac address
+#'
+#' This function assigns a random mac address to a networking interface.
+#'
+#' @note This feature is only implemented for linux systems using ifconfig.
+#'
+#' @author Thibaut Jombart \email{thibautjombart@@gmail.com}
+#'
+#' @param n An integer indicating the number of addresses to generate.
+#'
+#' @examples
+#'
+#' rmac(3)
+#'

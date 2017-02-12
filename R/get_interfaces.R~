@@ -1,0 +1,22 @@
+#' List networking interfaces
+#'
+#' This function generates a random mac address. So far no naming conventions
+#' are taken into account.
+#'
+#' @note This feature is only implemented for linux systems and requires 'ip'.
+#'
+#' @author Thibaut Jombart \email{thibautjombart@@gmail.com}
+#'
+#' @examples
+#'
+#' rmac(3)
+#'
+get_interfaces <- function(){
+
+  ## We use 'ip' system call to get the interfaces info and discard the one on
+  ## 'lo'.
+
+  info <- system("ip -o link show", intern = TRUE)
+  info <- info[-grep("lo:", info)]
+
+}
