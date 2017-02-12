@@ -36,6 +36,8 @@ ifconfig <- function(fields = c("inet", "inet6", "ether", "broadcast")){
     txt <- info[begin:end]
 
     out <- lapply(fields, get_field, txt)
+    names(out) <- fields
+    out <- out[!sapply(out, is.na)]
 
     out$name <- sub(":.*", "", txt[1])
 
